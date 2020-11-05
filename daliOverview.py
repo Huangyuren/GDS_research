@@ -9,7 +9,7 @@ import torch.cuda.nvtx as nvtx
 import time
 
 image_dir = "data/"
-batch_size = 1
+batch_size = 21
 
 def showImages(image_batch):
     columns = 4
