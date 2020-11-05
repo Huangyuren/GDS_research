@@ -1,0 +1,24 @@
+Collecting data...
+Signal 2 (SIGINT) was forwarded to the target application process group 26357
+Traceback (most recent call last):
+  File "vgg.py", line 190, in <module>
+    model = vgg19()
+  File "vgg.py", line 127, in vgg19
+    return _vgg('vgg19', 'E', False, pretrained, progress, **kwargs)
+  File "vgg.py", line 52, in _vgg
+    model = ModelParallelVGG(make_layers(cfgs[cfg], batch_norm=batch_norm), **kwargs)
+  File "vgg.py", line 10, in __init__
+    super(ModelParallelVGG, self).__init__(*args, **kwargs)
+  File "/home/yjhuang/.local/lib/python3.6/site-packages/torchvision/models/vgg.py", line 31, in __init__
+    nn.Linear(512 * 7 * 7, 4096),
+  File "/home/yjhuang/.local/lib/python3.6/site-packages/torch/nn/modules/linear.py", line 81, in __init__
+    self.reset_parameters()
+  File "/home/yjhuang/.local/lib/python3.6/site-packages/torch/nn/modules/linear.py", line 84, in reset_parameters
+    init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+  File "/home/yjhuang/.local/lib/python3.6/site-packages/torch/nn/init.py", line 386, in kaiming_uniform_
+    return tensor.uniform_(-bound, bound)
+KeyboardInterrupt
+
+The target application returned non-zero exit code 1
+Processing events...
+Capturing symbol files...
