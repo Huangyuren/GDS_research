@@ -37,14 +37,16 @@ class SimplePipeline(Pipeline):
         self.input = ops.FileReader(file_root = image_dir)
         # or we can write a list for specified file list
         # self.input = ops.FileReader(file_root = image_dir, file_list=image_dir+"/file_list.txt")
-        self.decode = ops.ImageDecoder(device="mixed", output_type=types.RGB)
+        # self.decode = ops.ImageDecoder(device="mixed", output_type=types.RGB)
 
     def define_graph(self):
         nvtx.range_push("Reading JPEG files into host memory")
         jpegs, labels = self.input() # read in jpeg files
         nvtx.range_pop()
         nvtx.range_push("Start mixed decoding process")
-        images = self.decode(jpegs) # Do decoding process
+        # images = self.decode(jpegs) # Do decoding process
+        decode = ops.ImageDecoder(device="mixed", output_type=types.RGB)
+        images = decode(jpegs)
         nvtx.range_pop()
         return (images, labels)
 
@@ -58,7 +60,7 @@ if __name__ == "__main__":
     pipe_out = pipe.run()
     images, labels = pipe_out
     nvtx.range_pop()
-    images_cpu = images.as_cpu()
+    # images_cpu = images.as_cpu()
     elapsed = time.time()-ticks
     print("Time elapsed for getting decoded images: ", elapsed)
     # showImages(images)
