@@ -45,32 +45,46 @@ int main() {
     const int N = 2<<20;
     size_t size = N * sizeof(float);
 
-    float *a;
-    float *b;
-    float *c;
+    float *h_a;
+    float *h_b;
+    float *h_c;
 
-    // a = (float *)malloc(size);
-    // b = (float *)malloc(size);
-    // c = (float *)malloc(size);
-    cudaCheckErrorInline(cudaMallocManaged(&a, size));
-    cudaCheckErrorInline(cudaMallocManaged(&b, size));
-    cudaCheckErrorInline(cudaMallocManaged(&c, size));
+    // cudaCheckErrorInline(cudaMallocManaged(&h_a, size));
+    // cudaCheckErrorInline(cudaMallocManaged(&h_b, size));
+    // cudaCheckErrorInline(cudaMallocManaged(&h_c, size));
 
-    initWith(3, a, N);
-    initWith(4, b, N);
-    initWith(0, c, N);
+    h_a = (float *)malloc(size);
+    h_b = (float *)malloc(size);
+    h_c = (float *)malloc(size);
+    initWith(3, h_a, N);
+    initWith(4, h_b, N);
+    initWith(0, h_c, N);
+
+    float *dev_a, *dev_b, *dev_c;
+    cudaMalloc((void **) &dev_a, sizeof(float)*N);
+    cudaMalloc((void **) &dev_b, sizeof(float)*N);
+    cudaMalloc((void **) &dev_c, sizeof(float)*N);
+
+    cudaMemcpy(dev_a, h_a, sizeof(float)*N, cudaMemcpyHostToDevice);
+    cudaMemcpy(dev_b, h_b, sizeof(float)*N, cudaMemcpyHostToDevice);
+    cudaMemcpy(dev_c, h_c, sizeof(float)*N, cudaMemcpyHostToDevice);
 
     size_t thread_per_block = 1024;
     size_t number_of_blocks = (N+thread_per_block - 1) / thread_per_block;
-    addVectorsInto<<<number_of_blocks, thread_per_block>>>(c, a, b, N);
-    cudaCheckError()
+    addVectorsInto<<<number_of_blocks, thread_per_block>>>(dev_c, dev_a, dev_b, N);
+    cudaCheckError();
 
     cudaDeviceSynchronize();
     cudaCheckError();
 
-    checkElementsAre(7, c, N);
+    cudaMemcpy(h_c, dev_c, sizeof(float)*N, cudaMemcpyDeviceToHost);
 
-    cudaCheckErrorInline(cudaFree(a));
-    cudaCheckErrorInline(cudaFree(b));
-    cudaCheckErrorInline(cudaFree(c));
+    checkElementsAre(7, h_c, N);
+
+    free(h_a);
+    free(h_b);
+    free(h_c);
+    cudaCheckErrorInline(cudaFree(dev_a));
+    cudaCheckErrorInline(cudaFree(dev_b));
+    cudaCheckErrorInline(cudaFree(dev_c));
 }
