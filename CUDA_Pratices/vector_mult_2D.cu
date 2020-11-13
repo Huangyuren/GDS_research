@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
+#define BLOCK_SIZE 1024
 inline cudaError_t cudaCheckError(cudaError_t result) {
 	if (result != cudaSuccess) {
 		fprintf(stderr, "CUDA error %s:%d: '%s'\n", __FILE__, __LINE__, cudaGetErrorString(result));
@@ -28,6 +29,10 @@ int main(int argc, char* argv[]) {
 
 	cudaCheckError(cudaMemcpy(dev_a, h_a, sizeof(int)*(row_a*col_a), cudaMemcpyHostToDevice));
 	cudaCheckError(cudaMemcpy(dev_b, h_b, sizeof(int)*(col_a*col_b), cudaMemcpyHostToDevice));
-	dim3 
-	matrixMultiplication<<<>>>(dev_a, dev_b, dev_c);
+
+    int grid_row = (row_a + BLOCK_SIZE +1) / BLOCK_SIZE;
+    int grid_col = (col_b + BLOCK_SIZE +1) / BLOCK_SIZE;
+	dim3 dimGrid(grid_col, grid_row);
+    dim3 dimBlock(BLOCK_SIZE, BLOCK_SIZE);
+	matrixMultiplication<<<dimGrid, dimBlock>>>(dev_a, dev_b, dev_c);
 }
