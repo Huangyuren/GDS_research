@@ -601,8 +601,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_382.bmp
-Cannot open file: ./xxxx/image_382.bmp
 Processing: ../data/2kResolution/image_743.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -1203,8 +1201,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_743.bmp
-Cannot open file: ./xxxx/image_743.bmp
 Processing: ../data/2kResolution/image_144.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -1805,8 +1801,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_144.bmp
-Cannot open file: ./xxxx/image_144.bmp
 Processing: ../data/2kResolution/image_8.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -2407,8 +2401,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_8.bmp
-Cannot open file: ./xxxx/image_8.bmp
 Processing: ../data/2kResolution/image_300.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -3009,8 +3001,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_300.bmp
-Cannot open file: ./xxxx/image_300.bmp
 Processing: ../data/2kResolution/image_543.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -3611,8 +3601,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_543.bmp
-Cannot open file: ./xxxx/image_543.bmp
 Processing: ../data/2kResolution/image_855.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -4213,8 +4201,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_855.bmp
-Cannot open file: ./xxxx/image_855.bmp
 Processing: ../data/2kResolution/image_326.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -4815,8 +4801,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_326.bmp
-Cannot open file: ./xxxx/image_326.bmp
 Processing: ../data/2kResolution/image_239.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -5417,8 +5401,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_239.bmp
-Cannot open file: ./xxxx/image_239.bmp
 Processing: ../data/2kResolution/image_741.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -6019,43 +6001,40 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot write output file: ./xxxx/image_741.bmp
-Cannot open file: ./xxxx/image_741.bmp
-Total decoding time: 1166.22
-Avg decoding time per image: 1.16622
-Avg images per sec: 0.857475
-Avg decoding time per batch: 116.622
+Total decoding time: 1166.13
+Avg decoding time per image: 1.16613
+Avg images per sec: 0.857534
+Avg decoding time per batch: 116.613
 Processing events...
 Capturing symbol files...
-Saving temporary "/tmp/nsys-report-95d8-b8ac-e5aa-ae35.qdstrm" file to disk...
+Saving temporary "/tmp/nsys-report-afd1-6bec-266d-2fca.qdstrm" file to disk...
 Creating final output files...
 
-Processing [0%                                                                ]Processing [2%                                                                ]Processing [=5%                                                               ]Processing [===10%                                                            ]Processing [========18%                                                       ]Processing [==============26%                                                 ]Processing [==============27%                                                 ]Processing [==================33%                                             ]Processing [===================34%                                            ]Processing [====================35%                                           ]Processing [=========================43%                                      ]Processing [==========================44%                                     ]Processing [==========================45%                                     ]Processing [===============================53%                                ]Processing [================================54%                               ]Processing [===================================59%                            ]Processing [====================================60%                           ]Processing [========================================66%                       ]Processing [===========================================71%                    ]Processing [===============================================76%                ]Processing [==================================================81%             ]Processing [======================================================87%         ]Processing [========================================================90%       ]Processing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-95d8-b8ac-e5aa-ae35.qdrep"
-Exporting 31621 events: [1%                                                   ]Exporting 31621 events: [2%                                                   ]Exporting 31621 events: [3%                                                   ]Exporting 31621 events: [4%                                                   ]Exporting 31621 events: [5%                                                   ]Exporting 31621 events: [=6%                                                  ]Exporting 31621 events: [=7%                                                  ]Exporting 31621 events: [==8%                                                 ]Exporting 31621 events: [==9%                                                 ]Exporting 31621 events: [==10%                                                ]Exporting 31621 events: [==11%                                                ]Exporting 31621 events: [===12%                                               ]Exporting 31621 events: [===13%                                               ]Exporting 31621 events: [====14%                                              ]Exporting 31621 events: [====15%                                              ]Exporting 31621 events: [=====16%                                             ]Exporting 31621 events: [======17%                                            ]Exporting 31621 events: [======18%                                            ]Exporting 31621 events: [=======19%                                           ]Exporting 31621 events: [=======20%                                           ]Exporting 31621 events: [========21%                                          ]Exporting 31621 events: [========22%                                          ]Exporting 31621 events: [=========23%                                         ]Exporting 31621 events: [=========24%                                         ]Exporting 31621 events: [==========25%                                        ]Exporting 31621 events: [==========26%                                        ]Exporting 31621 events: [===========27%                                       ]Exporting 31621 events: [===========28%                                       ]Exporting 31621 events: [============29%                                      ]Exporting 31621 events: [============30%                                      ]Exporting 31621 events: [=============31%                                     ]Exporting 31621 events: [=============32%                                     ]Exporting 31621 events: [==============33%                                    ]Exporting 31621 events: [===============34%                                   ]Exporting 31621 events: [===============35%                                   ]Exporting 31621 events: [================36%                                  ]Exporting 31621 events: [================37%                                  ]Exporting 31621 events: [=================38%                                 ]Exporting 31621 events: [=================39%                                 ]Exporting 31621 events: [==================40%                                ]Exporting 31621 events: [==================41%                                ]Exporting 31621 events: [===================42%                               ]Exporting 31621 events: [===================43%                               ]Exporting 31621 events: [====================44%                              ]Exporting 31621 events: [====================45%                              ]Exporting 31621 events: [=====================46%                             ]Exporting 31621 events: [=====================47%                             ]Exporting 31621 events: [======================48%                            ]Exporting 31621 events: [======================49%                            ]Exporting 31621 events: [=======================50%                           ]Exporting 31621 events: [========================51%                          ]Exporting 31621 events: [========================52%                          ]Exporting 31621 events: [=========================53%                         ]Exporting 31621 events: [=========================54%                         ]Exporting 31621 events: [==========================55%                        ]Exporting 31621 events: [==========================56%                        ]Exporting 31621 events: [===========================57%                       ]Exporting 31621 events: [===========================58%                       ]Exporting 31621 events: [============================59%                      ]Exporting 31621 events: [============================60%                      ]Exporting 31621 events: [=============================61%                     ]Exporting 31621 events: [=============================62%                     ]Exporting 31621 events: [==============================63%                    ]Exporting 31621 events: [==============================64%                    ]Exporting 31621 events: [===============================65%                   ]Exporting 31621 events: [===============================66%                   ]Exporting 31621 events: [================================67%                  ]Exporting 31621 events: [=================================68%                 ]Exporting 31621 events: [=================================69%                 ]Exporting 31621 events: [==================================70%                ]Exporting 31621 events: [==================================71%                ]Exporting 31621 events: [===================================72%               ]Exporting 31621 events: [===================================73%               ]Exporting 31621 events: [====================================74%              ]Exporting 31621 events: [====================================75%              ]Exporting 31621 events: [=====================================76%             ]Exporting 31621 events: [=====================================77%             ]Exporting 31621 events: [======================================78%            ]Exporting 31621 events: [======================================79%            ]Exporting 31621 events: [=======================================80%           ]Exporting 31621 events: [=======================================81%           ]Exporting 31621 events: [========================================82%          ]Exporting 31621 events: [========================================83%          ]Exporting 31621 events: [=========================================84%         ]Exporting 31621 events: [==========================================85%        ]Exporting 31621 events: [==========================================86%        ]Exporting 31621 events: [===========================================87%       ]Exporting 31621 events: [===========================================88%       ]Exporting 31621 events: [============================================89%      ]Exporting 31621 events: [============================================90%      ]Exporting 31621 events: [=============================================91%     ]Exporting 31621 events: [=============================================92%     ]Exporting 31621 events: [==============================================93%    ]Exporting 31621 events: [==============================================94%    ]Exporting 31621 events: [===============================================95%   ]Exporting 31621 events: [===============================================96%   ]Exporting 31621 events: [================================================97%  ]Exporting 31621 events: [================================================98%  ]Exporting 31621 events: [=================================================99% ]Exporting 31621 events: [=================================================100%]
+Processing [0%                                                                ]Processing [3%                                                                ]Processing [=6%                                                               ]Processing [====11%                                                           ]Processing [=========19%                                                      ]Processing [==============27%                                                 ]Processing [================30%                                               ]Processing [=================31%                                              ]Processing [===================34%                                            ]Processing [====================35%                                           ]Processing [====================36%                                           ]Processing [=========================43%                                      ]Processing [==========================44%                                     ]Processing [==========================45%                                     ]Processing [===========================46%                                    ]Processing [===============================53%                                ]Processing [================================54%                               ]Processing [=================================55%                              ]Processing [====================================60%                           ]Processing [=====================================61%                          ]Processing [=========================================67%                      ]Processing [============================================72%                   ]Processing [===============================================77%                ]Processing [===================================================83%            ]Processing [=======================================================88%        ]Processing [=========================================================91%      ]Processing [==============================================================100%]
+Saved report file to "/tmp/nsys-report-afd1-6bec-266d-2fca.qdrep"
+Exporting 31881 events: [1%                                                   ]Exporting 31881 events: [2%                                                   ]Exporting 31881 events: [3%                                                   ]Exporting 31881 events: [4%                                                   ]Exporting 31881 events: [5%                                                   ]Exporting 31881 events: [=6%                                                  ]Exporting 31881 events: [=7%                                                  ]Exporting 31881 events: [==8%                                                 ]Exporting 31881 events: [==9%                                                 ]Exporting 31881 events: [==10%                                                ]Exporting 31881 events: [==11%                                                ]Exporting 31881 events: [===12%                                               ]Exporting 31881 events: [===13%                                               ]Exporting 31881 events: [====14%                                              ]Exporting 31881 events: [====15%                                              ]Exporting 31881 events: [=====16%                                             ]Exporting 31881 events: [======17%                                            ]Exporting 31881 events: [======18%                                            ]Exporting 31881 events: [=======19%                                           ]Exporting 31881 events: [=======20%                                           ]Exporting 31881 events: [========21%                                          ]Exporting 31881 events: [========22%                                          ]Exporting 31881 events: [=========23%                                         ]Exporting 31881 events: [=========24%                                         ]Exporting 31881 events: [==========25%                                        ]Exporting 31881 events: [==========26%                                        ]Exporting 31881 events: [===========27%                                       ]Exporting 31881 events: [===========28%                                       ]Exporting 31881 events: [============29%                                      ]Exporting 31881 events: [============30%                                      ]Exporting 31881 events: [=============31%                                     ]Exporting 31881 events: [=============32%                                     ]Exporting 31881 events: [==============33%                                    ]Exporting 31881 events: [===============34%                                   ]Exporting 31881 events: [===============35%                                   ]Exporting 31881 events: [================36%                                  ]Exporting 31881 events: [================37%                                  ]Exporting 31881 events: [=================38%                                 ]Exporting 31881 events: [=================39%                                 ]Exporting 31881 events: [==================40%                                ]Exporting 31881 events: [==================41%                                ]Exporting 31881 events: [===================42%                               ]Exporting 31881 events: [===================43%                               ]Exporting 31881 events: [====================44%                              ]Exporting 31881 events: [====================45%                              ]Exporting 31881 events: [=====================46%                             ]Exporting 31881 events: [=====================47%                             ]Exporting 31881 events: [======================48%                            ]Exporting 31881 events: [======================49%                            ]Exporting 31881 events: [=======================50%                           ]Exporting 31881 events: [========================51%                          ]Exporting 31881 events: [========================52%                          ]Exporting 31881 events: [=========================53%                         ]Exporting 31881 events: [=========================54%                         ]Exporting 31881 events: [==========================55%                        ]Exporting 31881 events: [==========================56%                        ]Exporting 31881 events: [===========================57%                       ]Exporting 31881 events: [===========================58%                       ]Exporting 31881 events: [============================59%                      ]Exporting 31881 events: [============================60%                      ]Exporting 31881 events: [=============================61%                     ]Exporting 31881 events: [=============================62%                     ]Exporting 31881 events: [==============================63%                    ]Exporting 31881 events: [==============================64%                    ]Exporting 31881 events: [===============================65%                   ]Exporting 31881 events: [===============================66%                   ]Exporting 31881 events: [================================67%                  ]Exporting 31881 events: [=================================68%                 ]Exporting 31881 events: [=================================69%                 ]Exporting 31881 events: [==================================70%                ]Exporting 31881 events: [==================================71%                ]Exporting 31881 events: [===================================72%               ]Exporting 31881 events: [===================================73%               ]Exporting 31881 events: [====================================74%              ]Exporting 31881 events: [====================================75%              ]Exporting 31881 events: [=====================================76%             ]Exporting 31881 events: [=====================================77%             ]Exporting 31881 events: [======================================78%            ]Exporting 31881 events: [======================================79%            ]Exporting 31881 events: [=======================================80%           ]Exporting 31881 events: [=======================================81%           ]Exporting 31881 events: [========================================82%          ]Exporting 31881 events: [========================================83%          ]Exporting 31881 events: [=========================================84%         ]Exporting 31881 events: [==========================================85%        ]Exporting 31881 events: [==========================================86%        ]Exporting 31881 events: [===========================================87%       ]Exporting 31881 events: [===========================================88%       ]Exporting 31881 events: [============================================89%      ]Exporting 31881 events: [============================================90%      ]Exporting 31881 events: [=============================================91%     ]Exporting 31881 events: [=============================================92%     ]Exporting 31881 events: [==============================================93%    ]Exporting 31881 events: [==============================================94%    ]Exporting 31881 events: [===============================================95%   ]Exporting 31881 events: [===============================================96%   ]Exporting 31881 events: [================================================97%  ]Exporting 31881 events: [================================================98%  ]Exporting 31881 events: [=================================================99% ]Exporting 31881 events: [=================================================100%]
 
 Exported successfully to
-/tmp/nsys-report-95d8-b8ac-e5aa-ae35.sqlite
+/tmp/nsys-report-afd1-6bec-266d-2fca.sqlite
 
 Generating CUDA API Statistics...
 CUDA API Statistics (nanoseconds)
 
 Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
 -------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   40.3       142563880           1     142563880.0       142563880       142563880  cudaStreamCreateWithFlags                                                       
-   29.3       103741461        1010        102714.3            1549          464174  cudaStreamSynchronize                                                           
-    9.1        32064100         301        106525.2           59521          237181  cudaFree                                                                        
-    5.3        18870735         301         62693.5           56618          118343  cudaMalloc                                                                      
-    3.8        13609587          30        453652.9          432391          501091  cudaMemcpy2D                                                                    
-    3.6        12908489          10       1290848.9         1177594         1348812  cudaEventSynchronize                                                            
-    3.6        12778335        4000          3194.6            2090           32477  cudaLaunchKernel                                                                
-    3.0        10584842           2       5292421.0         2376814         8208028  cudaHostAlloc                                                                   
-    1.1         3738800        1000          3738.8            3217           11640  cudaMemcpyAsync                                                                 
-    0.8         2747487           2       1373743.5         1331258         1416229  cudaFreeHost                                                                    
-    0.0           67426          20          3371.3            2739            6325  cudaEventRecord                                                                 
-    0.0           25664          20          1283.2             424            2426  cudaEventCreateWithFlags                                                        
-    0.0            5041           1          5041.0            5041            5041  cudaStreamDestroy                                                               
-    0.0             893           1           893.0             893             893  cuInit                                                                          
+   38.5       134733160           1     134733160.0       134733160       134733160  cudaStreamCreateWithFlags                                                       
+   34.8       122007486        1010        120799.5            1613          189289  cudaStreamSynchronize                                                           
+    8.9        31053427         301        103167.5           58794          263018  cudaFree                                                                        
+    5.8        20272926         301         67351.9           55659          569041  cudaMalloc                                                                      
+    3.7        13008949        4000          3252.2            2182           24711  cudaLaunchKernel                                                                
+    3.7        12962976          10       1296297.6         1203677         1346522  cudaEventSynchronize                                                            
+    2.9        10067167           2       5033583.5         2083422         7983745  cudaHostAlloc                                                                   
+    1.1         3915139        1000          3915.1            3403           25227  cudaMemcpyAsync                                                                 
+    0.6         2103923           2       1051961.5         1038386         1065537  cudaFreeHost                                                                    
+    0.0           65264          20          3263.2            2384            6527  cudaEventRecord                                                                 
+    0.0           28729          20          1436.5             438            2509  cudaEventCreateWithFlags                                                        
+    0.0            4969           1          4969.0            4969            4969  cudaStreamDestroy                                                               
+    0.0             954           1           954.0             954             954  cuInit                                                                          
 
 
 
@@ -6065,8 +6044,8 @@ CUDA Kernel Statistics (nanoseconds)
 
 Time(%)      Total Time   Instances         Average         Minimum         Maximum  Name                                                                                                                                                                                                                                                                                                                                         
 -------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------------------------------------------                                                                                                                                                                                                                         
-   56.7        52154368        1000         52154.4           48515           65444  void nvjpeg::ycbcr_to_format_kernel_roi<(nvjpegChromaSubsampling_t)2, (nvjpegOutputFormat_t)3, nvjpeg::ConvertToFormatDispatchROI::LaunchParams<32, 8> >(nvjpegImage_t, NppiSize, nvjpegImage_t, NppiSize)                                                                                                                                   
-   43.3        39758004        3000         13252.7            8160           35586  void nvjpeg::dctQuantInvJpegKernel<uchar2, 1>(nvjpeg::InvDctParams)                                                                                                                                                                                                                                                                          
+   56.8        51097278        1000         51097.3           48451           65699  void nvjpeg::ycbcr_to_format_kernel_roi<(nvjpegChromaSubsampling_t)2, (nvjpegOutputFormat_t)3, nvjpeg::ConvertToFormatDispatchROI::LaunchParams<32, 8> >(nvjpegImage_t, NppiSize, nvjpegImage_t, NppiSize)                                                                                                                                   
+   43.2        38849173        3000         12949.7            8096           28129  void nvjpeg::dctQuantInvJpegKernel<uchar2, 1>(nvjpeg::InvDctParams)                                                                                                                                                                                                                                                                          
 
 
 
@@ -6075,8 +6054,7 @@ CUDA Memory Operation Statistics (nanoseconds)
 
 Time(%)      Total Time  Operations         Average         Minimum         Maximum  Name                                                                            
 -------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   99.0      1038587521        1000       1038587.5          970070         1476529  [CUDA memcpy HtoD]                                                              
-    1.0        10527268          30        350908.9          335443          387606  [CUDA memcpy DtoH]                                                              
+  100.0      1040793809        1000       1040793.8          970450         1218942  [CUDA memcpy HtoD]                                                              
 
 
 CUDA Memory Operation Statistics (KiB)
@@ -6084,7 +6062,6 @@ CUDA Memory Operation Statistics (KiB)
               Total      Operations              Average            Minimum              Maximum  Name                                                                            
 -------------------  --------------  -------------------  -----------------  -------------------  --------------------------------------------------------------------------------
        12288500.000            1000            12288.500          12288.500            12288.500  [CUDA memcpy HtoD]                                                              
-         122880.000              30             4096.000           4096.000             4096.000  [CUDA memcpy DtoH]                                                              
 
 
 
@@ -6094,30 +6071,30 @@ Operating System Runtime API Statistics (nanoseconds)
 
 Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
 -------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   36.2      1421732417          25      56869296.7            8395       100103008  sem_timedwait                                                                   
-   34.7      1364000932          54      25259276.5           28797       100154020  poll                                                                            
-   25.4      1000195129           2     500097564.5       500090265       500104864  pthread_cond_timedwait                                                          
-    3.0       119186841        1924         61947.4            1000        20315321  ioctl                                                                           
-    0.3        12700139          10       1270013.9         1162920         1320132  sem_wait                                                                        
-    0.2         6931509        1005          6897.0            1000           30643  read                                                                            
-    0.1         3546049         118         30051.3            1217         1013472  mmap                                                                            
-    0.0         1233826         997          1237.5            1001           23940  fopen64                                                                         
-    0.0          507031          77          6584.8            2208           23736  open64                                                                          
-    0.0          295686          32          9240.2            1150          146115  fopen                                                                           
-    0.0          275465         123          2239.6            1200            5827  fflush                                                                          
-    0.0          143761          82          1753.2            1240            7158  munmap                                                                          
-    0.0          137978           5         27595.6           20787           39575  pthread_create                                                                  
-    0.0          109984           3         36661.3           34606           39240  fgets                                                                           
-    0.0           75531          19          3975.3            1873            6237  fwrite                                                                          
-    0.0           58513          21          2786.3            1259            4145  write                                                                           
-    0.0           18723          13          1440.2            1007            1952  fclose                                                                          
-    0.0           17058           5          3411.6            2160            4379  open                                                                            
-    0.0            7904           4          1976.0            1166            2973  fread                                                                           
-    0.0            5754           2          2877.0            2248            3506  socket                                                                          
-    0.0            4281           1          4281.0            4281            4281  connect                                                                         
-    0.0            3340           1          3340.0            3340            3340  pipe2                                                                           
-    0.0            2900           2          1450.0            1018            1882  fcntl                                                                           
-    0.0            1013           1          1013.0            1013            1013  putc                                                                            
+   36.1      1393261656          24      58052569.0           46075       100136206  sem_timedwait                                                                   
+   34.7      1339022479          54      24796712.6            1198       100153001  poll                                                                            
+   25.9      1000198190           2     500099095.0       500096178       500102012  pthread_cond_timedwait                                                          
+    2.6       100315899        1932         51923.3            1000         8916799  ioctl                                                                           
+    0.3        12773624          10       1277362.4         1168320         1329616  sem_wait                                                                        
+    0.2         6878024        1005          6843.8            1008            8918  read                                                                            
+    0.1         3177443         118         26927.5            1266          844265  mmap                                                                            
+    0.0         1240428        1000          1240.4            1006            8093  fopen64                                                                         
+    0.0          459739          77          5970.6            2523           14210  open64                                                                          
+    0.0          388878         125          3111.0            1477           22736  fflush                                                                          
+    0.0          235201          24          9800.0            1065          178858  fopen                                                                           
+    0.0          148215          83          1785.7            1171            7259  munmap                                                                          
+    0.0          131473           5         26294.6           20615           35079  pthread_create                                                                  
+    0.0          109948           3         36649.3           34444           38797  fgets                                                                           
+    0.0           57742          21          2749.6            1393            3962  write                                                                           
+    0.0           36397           9          4044.1            2014           15442  fwrite                                                                          
+    0.0           31824          15          2121.6            1034            6000  fclose                                                                          
+    0.0           18356           5          3671.2            2555            4730  open                                                                            
+    0.0            8674           2          4337.0            4120            4554  socket                                                                          
+    0.0            8115           4          2028.8            1539            2579  fread                                                                           
+    0.0            4279           2          2139.5            2138            2141  putc                                                                            
+    0.0            4124           1          4124.0            4124            4124  connect                                                                         
+    0.0            3450           1          3450.0            3450            3450  pipe2                                                                           
+    0.0            2004           1          2004.0            2004            2004  fcntl                                                                           
 
 
 

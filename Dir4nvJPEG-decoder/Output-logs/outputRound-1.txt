@@ -602,8 +602,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_382.bmp
-Cannot write output file: ./xxx/image_382.bmp
 Processing: ../data/2kResolution/image_743.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -1204,8 +1202,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_743.bmp
-Cannot write output file: ./xxx/image_743.bmp
 Processing: ../data/2kResolution/image_144.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -1806,8 +1802,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_144.bmp
-Cannot write output file: ./xxx/image_144.bmp
 Processing: ../data/2kResolution/image_8.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -2408,8 +2402,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_8.bmp
-Cannot write output file: ./xxx/image_8.bmp
 Processing: ../data/2kResolution/image_300.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -3010,8 +3002,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_300.bmp
-Cannot write output file: ./xxx/image_300.bmp
 Processing: ../data/2kResolution/image_543.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -3612,8 +3602,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_543.bmp
-Cannot write output file: ./xxx/image_543.bmp
 Processing: ../data/2kResolution/image_855.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -4214,8 +4202,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_855.bmp
-Cannot write output file: ./xxx/image_855.bmp
 Processing: ../data/2kResolution/image_326.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -4816,8 +4802,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_326.bmp
-Cannot write output file: ./xxx/image_326.bmp
 Processing: ../data/2kResolution/image_239.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -5418,8 +5402,6 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_239.bmp
-Cannot write output file: ./xxx/image_239.bmp
 Processing: ../data/2kResolution/image_741.jpg
 Image is 3 channels.
 Channel #0 size: 2048 x 2048
@@ -6020,29 +6002,28 @@ Channel #0 size: 2048 x 2048
 Channel #1 size: 1024 x 1024
 Channel #2 size: 1024 x 1024
 YUV 4:2:0 chroma subsampling
-Cannot open file: ./xxx/image_741.bmp
-Cannot write output file: ./xxx/image_741.bmp
-Total decoding time: 1169.88
-Avg decoding time per image: 1.16988
-Avg images per sec: 0.85479
-Avg decoding time per batch: 116.988
+Total decoding time: 1175.64
+Avg decoding time per image: 1.17564
+Avg images per sec: 0.850602
+Avg decoding time per batch: 117.564
 vtune: Collection stopped.
 vtune: Using result path `/home/ted/GDS_research/Dir4nvJPEG-decoder/Vtune-profile-result'
-vtune: Executing actions  0 %                                                  vtune: Executing actions  0 % Finalizing results                               vtune: Executing actions  0 % Finalizing the result                            vtune: Executing actions  0 % Clearing the database                            vtune: Executing actions  7 % Clearing the database                            vtune: Executing actions  7 % Loading raw data to the database                 vtune: Executing actions  7 % Loading 'systemcollector-27585-Ted.sc' file      vtune: Executing actions 12 % Loading 'systemcollector-27585-Ted.sc' file      vtune: Executing actions 12 % Loading '27595.stat.perf' file                   vtune: Executing actions 12 % Loading '27585-27595.0.trace' file               vtune: Executing actions 12 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Processing profile metrics and debug information vtune: Executing actions 19 % Processing profile metrics and debug information vtune: Executing actions 19 % Setting data model parameters                    vtune: Executing actions 19 % Resolving module symbols                         vtune: Executing actions 19 % Resolving information for `libpthread.so.0'      vtune: Executing actions 19 % Resolving information for `libcudart.so.11.0'    vtune: Executing actions 19 % Resolving information for `nvjpegDecoder'        
+vtune: Executing actions  0 %                                                  vtune: Executing actions  0 % Finalizing results                               vtune: Executing actions  0 % Finalizing the result                            vtune: Executing actions  0 % Clearing the database                            vtune: Executing actions  7 % Clearing the database                            vtune: Executing actions  7 % Loading raw data to the database                 vtune: Executing actions  7 % Loading 'systemcollector-15152-Ted.sc' file      vtune: Executing actions 12 % Loading 'systemcollector-15152-Ted.sc' file      vtune: Executing actions 12 % Loading '15162.stat.perf' file                   vtune: Executing actions 12 % Loading '15152-15162.0.trace' file               vtune: Executing actions 12 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Processing profile metrics and debug information vtune: Executing actions 19 % Processing profile metrics and debug information vtune: Executing actions 19 % Setting data model parameters                    vtune: Executing actions 19 % Resolving module symbols                         vtune: Executing actions 19 % Resolving information for `[vdso]'               vtune: Executing actions 19 % Resolving information for `nvjpegDecoder'        vtune: Executing actions 19 % Resolving information for `libcudart.so.11.0'    
 vtune: Warning: Cannot locate debugging information for file `/home/ted/GDS_research/Dir4nvJPEG-decoder/nvjpegDecoder'.
-vtune: Executing actions 19 % Resolving information for `libc.so.6'            
+vtune: Executing actions 19 % Resolving information for `libstdc++.so.6'       
 vtune: Warning: Cannot locate debugging information for file `/usr/local/cuda-11.0/lib64/libcudart.so.11.0'.
-vtune: Executing actions 19 % Resolving information for `libnvjpeg.so.11'      
+vtune: Warning: Cannot locate debugging information for file `/usr/lib/x86_64-linux-gnu/libstdc++.so.6'.
+vtune: Executing actions 19 % Resolving information for `libnvjpeg.so.11'      vtune: Executing actions 19 % Resolving information for `libdl.so.2'           vtune: Executing actions 19 % Resolving information for `libc.so.6'            
 vtune: Warning: Cannot locate debugging information for file `/usr/local/cuda-11.0/lib64/libnvjpeg.so.11'.
-vtune: Executing actions 19 % Resolving information for `libtpsstool.so'       vtune: Executing actions 20 % Resolving information for `libtpsstool.so'       vtune: Executing actions 20 % Resolving information for `libcuda.so.1'         
+vtune: Executing actions 20 % Resolving information for `libc.so.6'            vtune: Executing actions 20 % Resolving information for `libpthread.so.0'      vtune: Executing actions 20 % Resolving information for `libtpsstool.so'       
 vtune: Warning: Cannot locate debugging information for file `/home/ted/intel/vtune_profiler_2020.3.0.612611/lib64/libtpsstool.so'.
-vtune: Executing actions 21 % Resolving information for `libcuda.so.1'         
+vtune: Executing actions 20 % Resolving information for `libcuda.so.1'         vtune: Executing actions 21 % Resolving information for `libcuda.so.1'         vtune: Executing actions 22 % Resolving information for `libcuda.so.1'         
 vtune: Warning: Cannot locate debugging information for file `/usr/lib/x86_64-linux-gnu/libcuda.so.1'.
-vtune: Executing actions 22 % Resolving information for `libcuda.so.1'         vtune: Executing actions 22 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving thread name information                vtune: Executing actions 24 % Resolving thread name information                vtune: Executing actions 24 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving interrupt name information             vtune: Executing actions 26 % Resolving interrupt name information             vtune: Executing actions 26 % Processing profile metrics and debug information vtune: Executing actions 28 % Processing profile metrics and debug information vtune: Executing actions 29 % Processing profile metrics and debug information vtune: Executing actions 30 % Processing profile metrics and debug information vtune: Executing actions 30 % Setting data model parameters                    vtune: Executing actions 30 % Precomputing frequently used data                vtune: Executing actions 30 % Precomputing frequently used data                vtune: Executing actions 31 % Precomputing frequently used data                vtune: Executing actions 32 % Precomputing frequently used data                vtune: Executing actions 33 % Precomputing frequently used data                vtune: Executing actions 34 % Precomputing frequently used data                vtune: Executing actions 36 % Precomputing frequently used data                vtune: Executing actions 36 % Updating precomputed scalar metrics              vtune: Executing actions 37 % Updating precomputed scalar metrics              vtune: Executing actions 37 % Discarding redundant overtime data               vtune: Executing actions 39 % Discarding redundant overtime data               vtune: Executing actions 39 % Saving the result                                vtune: Executing actions 41 % Saving the result                                vtune: Executing actions 42 % Saving the result                                vtune: Executing actions 50 % Saving the result                                vtune: Executing actions 50 % Generating a report                              vtune: Executing actions 50 % Setting data model parameters                    vtune: Executing actions 75 % Setting data model parameters                    vtune: Executing actions 75 % Generating a report                              Elapsed Time: 1.569s
-    CPU Time: 1.330s
-        Effective Time: 1.330s
+vtune: Executing actions 22 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving thread name information                vtune: Executing actions 24 % Resolving thread name information                vtune: Executing actions 24 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving interrupt name information             vtune: Executing actions 26 % Resolving interrupt name information             vtune: Executing actions 26 % Processing profile metrics and debug information vtune: Executing actions 28 % Processing profile metrics and debug information vtune: Executing actions 29 % Processing profile metrics and debug information vtune: Executing actions 30 % Processing profile metrics and debug information vtune: Executing actions 30 % Setting data model parameters                    vtune: Executing actions 30 % Precomputing frequently used data                vtune: Executing actions 30 % Precomputing frequently used data                vtune: Executing actions 31 % Precomputing frequently used data                vtune: Executing actions 32 % Precomputing frequently used data                vtune: Executing actions 33 % Precomputing frequently used data                vtune: Executing actions 34 % Precomputing frequently used data                vtune: Executing actions 36 % Precomputing frequently used data                vtune: Executing actions 36 % Updating precomputed scalar metrics              vtune: Executing actions 37 % Updating precomputed scalar metrics              vtune: Executing actions 37 % Discarding redundant overtime data               vtune: Executing actions 39 % Discarding redundant overtime data               vtune: Executing actions 39 % Saving the result                                vtune: Executing actions 41 % Saving the result                                vtune: Executing actions 42 % Saving the result                                vtune: Executing actions 49 % Saving the result                                vtune: Executing actions 50 % Saving the result                                vtune: Executing actions 50 % Generating a report                              vtune: Executing actions 50 % Setting data model parameters                    vtune: Executing actions 75 % Setting data model parameters                    vtune: Executing actions 75 % Generating a report                              Elapsed Time: 1.512s
+    CPU Time: 1.300s
+        Effective Time: 1.300s
             Idle: 0s
-            Poor: 1.330s
+            Poor: 1.300s
             Ok: 0s
             Ideal: 0s
             Over: 0s
@@ -6054,27 +6035,27 @@ vtune: Warning: Cannot locate debugging information for file `/usr/lib/x86_64-li
 Top Hotspots
 Function                  Module           CPU Time
 ------------------------  ---------------  --------
-func@0x19e50              libnvjpeg.so.11    1.030s
-cuStreamSynchronize       libcuda.so.1       0.126s
-cuDevicePrimaryCtxRetain  libcuda.so.1       0.068s
-cuMemFree_v2              libcuda.so.1       0.038s
-__memset_avx2_erms        libc.so.6          0.024s
-[Others]                  N/A                0.045s
-Effective CPU Utilization: 9.9%
+func@0x19e50              libnvjpeg.so.11    0.996s
+cuStreamSynchronize       libcuda.so.1       0.144s
+cuDevicePrimaryCtxRetain  libcuda.so.1       0.060s
+cuMemFree_v2              libcuda.so.1       0.030s
+cuMemAlloc_v2             libcuda.so.1       0.020s
+[Others]                  N/A                0.050s
+Effective CPU Utilization: 10.1%
  | The metric value is low, which may signal a poor logical CPU cores
  | utilization caused by load imbalance, threading runtime overhead, contended
  | synchronization, or thread/process underutilization. Explore sub-metrics to
  | estimate the efficiency of MPI and OpenMP parallelism or run the Locks and
  | Waits analysis to identify parallel bottlenecks for other parallel runtimes.
  |
-    Average Effective CPU Utilization: 0.792 out of 8
+    Average Effective CPU Utilization: 0.808 out of 8
 Collection and Platform Info
-    Application Command Line: ./nvjpegDecoder "-b" "100" "-t" "1000" "-i" "../data/2kResolution/" "-o" "./xxx" 
+    Application Command Line: ./nvjpegDecoder "-b" "100" "-t" "1000" "-i" "../data/2kResolution/" 
     Operating System: 5.4.0-54-generic NAME="Ubuntu" VERSION="18.04.5 LTS (Bionic Beaver)" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu 18.04.5 LTS" VERSION_ID="18.04" HOME_URL="https://www.ubuntu.com/" SUPPORT_URL="https://help.ubuntu.com/" BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/" PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy" VERSION_CODENAME=bionic UBUNTU_CODENAME=bionic
     Computer Name: Ted
     Result Size: 4 MB 
-    Collection start time: 17:42:35 19/11/2020 UTC
-    Collection stop time: 17:42:36 19/11/2020 UTC
+    Collection start time: 07:43:02 20/11/2020 UTC
+    Collection stop time: 07:43:03 20/11/2020 UTC
     Collector Type: Driverless Perf per-process counting,User-mode sampling and tracing
     CPU
         Name: Intel(R) microarchitecture code named Coffeelake
