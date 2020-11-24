@@ -1,3 +1,4 @@
+import os
 import cv2
 import numpy as np
 import argparse
@@ -23,7 +24,15 @@ height = args.col
 pathDir = args.path
 iteration = args.iteration
 blue = (0, 0, 255)
+if not (os.path.isdir(pathDir)):
+    print("Path not exists, creating new directory.")
+    try:
+        os.mkdir(pathDir)
+    except OSError:
+        print("Creation of directory %s failed." % pathDir)
+    else:
+        print("Successfully created the directory %s." % pathDir)
 for i in range(iteration):
     image = create_blank(width, height, blue)
     cv2.imwrite(pathDir+"image_"+str(i)+".jpg", image)
-    print("Index: ", i)
+    # print("Index: ", i)
