@@ -66,7 +66,6 @@
             exit(1);                                                            \
         }                                                                       \
     }
-#define STREAM_NUM 10
 
 int dev_malloc(void **p, size_t s) { return (int)cudaMalloc(p, s); }
 
@@ -88,8 +87,7 @@ struct decode_params_t {
 
   nvjpegJpegState_t nvjpeg_state;
   nvjpegHandle_t nvjpeg_handle;
-  // cudaStream_t stream;
-  cudaStream_t stream[STREAM_NUM];
+  cudaStream_t stream;
 
   // used with decoupled API
   nvjpegJpegState_t nvjpeg_decoupled_state;
