@@ -1,13 +1,3 @@
 #!/bin/bash
 
-DIR="./build/"
-if [ -d "$DIR" ]; then
-    echo "Rebuilding nvjpeg code in ${DIR}..."
-    rm -rf ./build
-else
-    echo "Building nvjpeg code in ${DIR}..."
-fi
-
-mkdir build && cd build
-cmake ../
-make
+g++ -m64 ./mynvJpegDecoder.cpp -I../include -lnvjpeg -L../lib64 -I/usr/local/cuda-11.0/include -ldl -lrt -pthread -lcudart -L/usr/local/cuda-11.0/lib64 -Wl,-rpath=../lib64 -Wl,-rpath=/usr/local/cuda-11.0/lib64 -o test_out
