@@ -233,7 +233,7 @@ int prepare_buffers(FileData &file_data, std::vector<size_t> &file_len,
         if (ibuf[i].channel[c]) {
           CHECK_CUDA(cudaFree(ibuf[i].channel[c]));
         }
-        CHECK_CUDA(cudaMalloc(&ibuf[i].channel[c], sz));
+        CHECK_CUDA(cudaMalloc((void**)&ibuf[i].channel[c], sz));
         isz[i].pitch[c] = sz;
       }
     }
