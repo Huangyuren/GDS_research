@@ -1,171 +1,0 @@
-Collecting data...
-Decoding images in directory: ../data/2kResolution/, total 10, batchsize 5
-Processing: ../data/2kResolution/image_382.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-Processing: ../data/2kResolution/image_259.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-Processing: ../data/2kResolution/image_116.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-Processing: ../data/2kResolution/image_750.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-Processing: ../data/2kResolution/image_182.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-StopEvent recording...
-Processing: ../data/2kResolution/image_560.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-Processing: ../data/2kResolution/image_396.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-Processing: ../data/2kResolution/image_718.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-Processing: ../data/2kResolution/image_647.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-Processing: ../data/2kResolution/image_6.jpg
-Image is 3 channels.
-Channel #0 size: 2048 x 2048
-Channel #1 size: 1024 x 1024
-Channel #2 size: 1024 x 1024
-YUV 4:2:0 chroma subsampling
-StopEvent recording...
-Total decoding time: 15.0853
-Avg decoding time per image: 1.50853
-Avg images per sec: 0.662895
-Avg decoding time per batch: 7.54267
-Processing events...
-Capturing symbol files...
-Saving temporary "/tmp/nsys-report-bf17-988d-a21a-0ac5.qdstrm" file to disk...
-Creating final output files...
-
-Processing [0%                                                                ]Processing [====12%                                                           ]Processing [====================36%                                           ]Processing [=====================================61%                          ]Processing [=====================================62%                          ]Processing [======================================63%                         ]Processing [=================================================80%              ]Processing [==================================================81%             ]Processing [=====================================================86%          ]Processing [=======================================================88%        ]Processing [==========================================================93%     ]Processing [===========================================================94%    ]Processing [=============================================================98%  ]Processing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-bf17-988d-a21a-0ac5.qdrep"
-Exporting 2903 events: [1%                                                    ]Exporting 2903 events: [2%                                                    ]Exporting 2903 events: [3%                                                    ]Exporting 2903 events: [4%                                                    ]Exporting 2903 events: [5%                                                    ]Exporting 2903 events: [=6%                                                   ]Exporting 2903 events: [=7%                                                   ]Exporting 2903 events: [==8%                                                  ]Exporting 2903 events: [==9%                                                  ]Exporting 2903 events: [==10%                                                 ]Exporting 2903 events: [==11%                                                 ]Exporting 2903 events: [===12%                                                ]Exporting 2903 events: [====13%                                               ]Exporting 2903 events: [====14%                                               ]Exporting 2903 events: [=====15%                                              ]Exporting 2903 events: [=====16%                                              ]Exporting 2903 events: [======17%                                             ]Exporting 2903 events: [======18%                                             ]Exporting 2903 events: [=======19%                                            ]Exporting 2903 events: [=======20%                                            ]Exporting 2903 events: [========21%                                           ]Exporting 2903 events: [========22%                                           ]Exporting 2903 events: [=========23%                                          ]Exporting 2903 events: [=========24%                                          ]Exporting 2903 events: [==========25%                                         ]Exporting 2903 events: [===========26%                                        ]Exporting 2903 events: [===========27%                                        ]Exporting 2903 events: [============28%                                       ]Exporting 2903 events: [============29%                                       ]Exporting 2903 events: [=============30%                                      ]Exporting 2903 events: [=============31%                                      ]Exporting 2903 events: [==============32%                                     ]Exporting 2903 events: [==============33%                                     ]Exporting 2903 events: [===============34%                                    ]Exporting 2903 events: [===============35%                                    ]Exporting 2903 events: [================36%                                   ]Exporting 2903 events: [================37%                                   ]Exporting 2903 events: [=================38%                                  ]Exporting 2903 events: [==================39%                                 ]Exporting 2903 events: [==================40%                                 ]Exporting 2903 events: [===================41%                                ]Exporting 2903 events: [===================42%                                ]Exporting 2903 events: [====================43%                               ]Exporting 2903 events: [====================44%                               ]Exporting 2903 events: [=====================45%                              ]Exporting 2903 events: [=====================46%                              ]Exporting 2903 events: [======================47%                             ]Exporting 2903 events: [======================48%                             ]Exporting 2903 events: [=======================49%                            ]Exporting 2903 events: [========================50%                           ]Exporting 2903 events: [========================51%                           ]Exporting 2903 events: [=========================52%                          ]Exporting 2903 events: [=========================53%                          ]Exporting 2903 events: [==========================54%                         ]Exporting 2903 events: [==========================55%                         ]Exporting 2903 events: [===========================56%                        ]Exporting 2903 events: [===========================57%                        ]Exporting 2903 events: [============================58%                       ]Exporting 2903 events: [============================59%                       ]Exporting 2903 events: [=============================60%                      ]Exporting 2903 events: [=============================61%                      ]Exporting 2903 events: [==============================62%                     ]Exporting 2903 events: [===============================63%                    ]Exporting 2903 events: [===============================64%                    ]Exporting 2903 events: [================================65%                   ]Exporting 2903 events: [================================66%                   ]Exporting 2903 events: [=================================67%                  ]Exporting 2903 events: [=================================68%                  ]Exporting 2903 events: [==================================69%                 ]Exporting 2903 events: [==================================70%                 ]Exporting 2903 events: [===================================71%                ]Exporting 2903 events: [===================================72%                ]Exporting 2903 events: [====================================73%               ]Exporting 2903 events: [====================================74%               ]Exporting 2903 events: [=====================================75%              ]Exporting 2903 events: [======================================76%             ]Exporting 2903 events: [======================================77%             ]Exporting 2903 events: [=======================================78%            ]Exporting 2903 events: [=======================================79%            ]Exporting 2903 events: [========================================80%           ]Exporting 2903 events: [========================================81%           ]Exporting 2903 events: [=========================================82%          ]Exporting 2903 events: [=========================================83%          ]Exporting 2903 events: [==========================================84%         ]Exporting 2903 events: [==========================================85%         ]Exporting 2903 events: [===========================================86%        ]Exporting 2903 events: [===========================================87%        ]Exporting 2903 events: [============================================88%       ]Exporting 2903 events: [=============================================89%      ]Exporting 2903 events: [=============================================90%      ]Exporting 2903 events: [==============================================91%     ]Exporting 2903 events: [==============================================92%     ]Exporting 2903 events: [===============================================93%    ]Exporting 2903 events: [===============================================94%    ]Exporting 2903 events: [================================================95%   ]Exporting 2903 events: [================================================96%   ]Exporting 2903 events: [=================================================97%  ]Exporting 2903 events: [=================================================98%  ]Exporting 2903 events: [==================================================99% ]Exporting 2903 events: [==================================================100%]
-
-Exported successfully to
-/tmp/nsys-report-bf17-988d-a21a-0ac5.sqlite
-
-Generating CUDA API Statistics...
-CUDA API Statistics (nanoseconds)
-
-Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   91.9       140091921           7      20013131.6            1217       140036121  cudaStreamCreateWithFlags                                                       
-    2.9         4431285           2       2215642.5         2182889         2248396  cudaHostAlloc                                                                   
-    2.1         3190828          16        199426.7           60311         1114750  cudaFree                                                                        
-    1.6         2365551           2       1182775.5         1092824         1272727  cudaFreeHost                                                                    
-    0.7         1038177          16         64886.1           57055          111152  cudaMalloc                                                                      
-    0.6          912761          22         41489.1             517          867377  cudaStreamSynchronize                                                           
-    0.1          179867          40          4496.7            2315           19127  cudaLaunchKernel                                                                
-    0.1          136286           2         68143.0           59004           77282  cudaEventSynchronize                                                            
-    0.0           62993          10          6299.3            3670           12748  cudaMemcpyAsync                                                                 
-    0.0           14539           6          2423.2            1297            4951  cudaStreamDestroy                                                               
-    0.0           11617           4          2904.3            1959            3832  cudaEventRecord                                                                 
-    0.0            3897           4           974.2             443            1839  cudaEventCreateWithFlags                                                        
-    0.0            1272           1          1272.0            1272            1272  cudaEventCreate                                                                 
-    0.0            1080           1          1080.0            1080            1080  cuInit                                                                          
-    0.0             966           1           966.0             966             966  cudaEventDestroy                                                                
-
-
-
-
-Generating CUDA Kernel Statistics...
-CUDA Kernel Statistics (nanoseconds)
-
-Time(%)      Total Time   Instances         Average         Minimum         Maximum  Name                                                                                                                                                                                                                                                                                                                                         
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------------------------------------------                                                                                                                                                                                                                         
-   56.2          529753          10         52975.3            1375           65091  void nvjpeg::ycbcr_to_format_kernel_roi<(nvjpegChromaSubsampling_t)2, (nvjpegOutputFormat_t)3, nvjpeg::ConvertToFormatDispatchROI::LaunchParams<32, 8> >(nvjpegImage_t, NppiSize, nvjpegImage_t, NppiSize)                                                                                                                                   
-   43.8          412915          30         13763.8            1215           28257  void nvjpeg::dctQuantInvJpegKernel<uchar2, 1>(nvjpeg::InvDctParams)                                                                                                                                                                                                                                                                          
-
-
-
-Generating CUDA Memory Operation Statistics...
-CUDA Memory Operation Statistics (nanoseconds)
-
-Time(%)      Total Time  Operations         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-  100.0        10311933          10       1031193.3          972854         1146080  [CUDA memcpy HtoD]                                                              
-
-
-CUDA Memory Operation Statistics (KiB)
-
-              Total      Operations              Average            Minimum              Maximum  Name                                                                            
--------------------  --------------  -------------------  -----------------  -------------------  --------------------------------------------------------------------------------
-         122885.000              10            12288.500          12288.500            12288.500  [CUDA memcpy HtoD]                                                              
-
-
-
-
-Generating Operating System Runtime API Statistics...
-Operating System Runtime API Statistics (nanoseconds)
-
-Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   45.0       187682703          12      15640225.3           19869       100062238  sem_timedwait                                                                   
-   38.4       160513908          18       8917439.3           18762        44125507  poll                                                                            
-   15.5        64604782         736         87778.2            1001        12848974  ioctl                                                                           
-    0.8         3324324          82         40540.5            1194          949649  mmap                                                                            
-    0.1          568045          77          7377.2            3168           18902  open64                                                                          
-    0.0          165584           5         33116.8           21892           45928  pthread_create                                                                  
-    0.0          156095          25          6243.8            1077           87226  fopen                                                                           
-    0.0          127908           3         42636.0           40576           45270  fgets                                                                           
-    0.0          119847           2         59923.5           52866           66981  sem_wait                                                                        
-    0.0           73585          14          5256.1            1242           11258  read                                                                            
-    0.0           35697          12          2974.7            1113            5090  munmap                                                                          
-    0.0           30061          13          2312.4            1183            4421  write                                                                           
-    0.0           23369           5          4673.8            3194            6441  open                                                                            
-    0.0           22872          10          2287.2            1176            9160  fopen64                                                                         
-    0.0           22383           8          2797.9            2031            4087  fflush                                                                          
-    0.0           15118           9          1679.8            1027            2962  fclose                                                                          
-    0.0            8417           4          2104.3            1201            3249  fread                                                                           
-    0.0            7763           2          3881.5            3261            4502  socket                                                                          
-    0.0            5158           1          5158.0            5158            5158  connect                                                                         
-    0.0            3259           1          3259.0            3259            3259  pipe2                                                                           
-    0.0            1973           1          1973.0            1973            1973  fcntl                                                                           
-    0.0            1395           1          1395.0            1395            1395  fwrite                                                                          
-    0.0            1090           1          1090.0            1090            1090  bind                                                                            
-
-
-
-
-Generating NVTX Push-Pop Range Statistics...
-NVTX Push-Pop Range Statistics (nanoseconds)
-
-
-
-
-Report file moved to "/home/ted/GDS_research/Dir4nvJPEG-decoder/nsysResult/report-CUDAStreams-nvJPEG.qdrep"
-Report file moved to "/home/ted/GDS_research/Dir4nvJPEG-decoder/nsysResult/report-CUDAStreams-nvJPEG.sqlite"
