@@ -1,7 +1,7 @@
 # Required files
 SRC := ./src/
 BIN := ./bin/
-FILE2COMPILE := mynvJpegDecoder
+FILE2COMPILE := mynvjpegDecoder
 
 SOURCE := $(SRC)$(FILE2COMPILE).cpp
 TARGET := $(BIN)$(FILE2COMPILE)
