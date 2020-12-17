@@ -12,8 +12,8 @@ CC=g++
 # Libraries and flags
 OPENCV_LIBS=`pkg-config --cflags --libs opencv`
 LDFLAGS=-L../lib64 -L/usr/local/cuda-11.0/lib64
-INCLUDES=-I./include -I/usr/local/cuda-11.0/include -I../../openslide/src
-LIBS=-ldl -lrt -lcudart -lnvjpeg
+INCLUDES=-I./include -I/usr/local/cuda-11.0/include -I../../openslide/src -I../../openslide/common
+LIBS=-ldl -lrt -lcudart -lnvjpeg -lopenslide
 RPATH=-Wl,-rpath=../lib64 -Wl,-rpath=/usr/local/cuda-11.0/lib64
 CXXFLAGS := -O2 -std=c++14 $(LDFLAGS) $(INCLUDES) $(LIBS) $(RPATH)
 

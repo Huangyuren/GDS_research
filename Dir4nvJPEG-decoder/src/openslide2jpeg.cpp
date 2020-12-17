@@ -1,4 +1,6 @@
 #include "openslide-features.h"
+#include "openslide.h"
+// #include "openslide-common.h"
 #include "nvjpegDecoder.h"
 #include <stdint.h>
 #include <stdio.h>
@@ -27,9 +29,9 @@ void Openslide2jpeg::searchPath(string basepath){
         while ((ent = readdir(dir)) != NULL) {
             if(string(ent->d_name) != ".." && string(ent->d_name) != "."){
                 //Iterator through ./data/class_*/ directory
-                dir_inner = opendir((basepath + "/" + ent->d_name).c_str());
+                dir_inner = opendir((basepath + ent->d_name).c_str());
                 while((ent_inner = readdir(dir_inner)) != nullptr) {
-                    slide_files.push_back(string(basepath + "/" + string(ent_inner->d_name)));
+                    slide_files.push_back(string(basepath + string(ent->d_name) + "/" + string(ent_inner->d_name)));
                     if(string(ent_inner->d_name) != ".." && string(ent_inner->d_name) != "."){
                         printf ("%s\n", ent_inner->d_name);
                         slide_count += 1;
@@ -49,7 +51,8 @@ void Openslide2jpeg::searchPath(string basepath){
 
 
 void Openslide2jpeg::loadWholeSlide(int index){
-    openslide_t* slide = openslide_open(slide_files[index]);
+    printf("file name: %s\n", slide_files[index].c_str());
+    openslide_t* slide = openslide_open(slide_files[index].c_str());
     int level_cnt = openslide_get_level_count(slide);
     printf("Level count: %d\n", level_cnt);
 }
