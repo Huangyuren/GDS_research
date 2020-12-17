@@ -48,9 +48,11 @@ void Openslide2jpeg::searchPath(string basepath){
 }
 
 
-// void Openslide2jpeg::loadWholeSlide(int index){
-//     openslide_t* slide = openslide_open(slide_files[index]);
-// }
+void Openslide2jpeg::loadWholeSlide(int index){
+    openslide_t* slide = openslide_open(slide_files[index]);
+    int level_cnt = openslide_get_level_count(slide);
+    printf("Level count: %d\n", level_cnt);
+}
 
 int main(int argc, char* argv[]){
     if(argc < 2){
@@ -60,6 +62,7 @@ int main(int argc, char* argv[]){
     string slide_path = argv[1];
     Openslide2jpeg slideObj;
     slideObj.searchPath(slide_path);
+    slideObj.loadWholeSlide(0);
 }
 /*def _load_img(self, index):
         #  print("Index: {}, Loading images...".format(index))
