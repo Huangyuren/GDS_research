@@ -13,6 +13,10 @@ using namespace std;
 class Openslide2jpeg {
     private:
         int slide_count;
+        float resize_ratio;
+        int64_t target_width, target_height;
+        int32_t target_level;
+        uint32_t* buf;
         vector<string> slide_files;
     public:
         void searchPath(string);
@@ -51,10 +55,23 @@ void Openslide2jpeg::searchPath(string basepath){
 
 
 void Openslide2jpeg::loadWholeSlide(int index){
-    printf("file name: %s\n", slide_files[index].c_str());
+    resize_ratio = 0.2;
+    printf("Current processing file name: %s\n", slide_files[index].c_str());
     openslide_t* slide = openslide_open(slide_files[index].c_str());
     int level_cnt = openslide_get_level_count(slide);
-    printf("Level count: %d\n", level_cnt);
+    // printf("Level count: %d\n", level_cnt);
+    for(int i=0; i<level_cnt; i++){
+        int32_t tmp_level = openslide_get_level_downsample(slide, i);
+        if(tmp_level <= 1.0 / resize_ratio){
+            target_level = tmp_level;
+        }
+    }
+    printf("Target level: %d\n", target_level);
+    openslide_get_level_dimensions(slide, target_level, &target_width, &target_height);
+    printf("Target width: %ld, Target height: %ld", target_width, target_height);
+    buf = reinterpret_cast<uint32_t*>(malloc((size_t)target_width * (size_t)target_height * (size_t)4));
+    openslide_read_region(slide, buf, 0, 0, target_level, target_width, target_height);
+    free(buf);
 }
 
 int main(int argc, char* argv[]){
