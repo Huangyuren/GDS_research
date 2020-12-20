@@ -10,9 +10,8 @@ TARGET := $(BIN)$(FILE2COMPILE)
 CC=g++
 
 # Libraries and flags
-OPENCV_LIBS=`pkg-config --cflags --libs opencv`
 LDFLAGS=-L../lib64 -L/usr/local/cuda-11.0/lib64 -L/usr/local/lib
-INCLUDES=-I./include -I/usr/local/cuda-11.0/include -I../../openslide/src -I../../openslide/common -I/usr/local/include/opencv -I/usr/local/include
+INCLUDES=-I./include -I/usr/local/cuda-11.0/include -I../../openslide/src -I../../openslide/common -I/usr/local/include/opencv4
 LIBS=-ldl -lrt -lcudart -lnvjpeg -lopenslide -lopencv_core -lopencv_imgcodecs
 RPATH=-Wl,-rpath=../lib64 -Wl,-rpath=/usr/local/cuda-11.0/lib64
 CXXFLAGS := -O2 -std=c++14 $(LDFLAGS) $(INCLUDES) $(LIBS) $(RPATH)
