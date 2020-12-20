@@ -1,6 +1,9 @@
 #include "openslide-features.h"
 #include "openslide.h"
 // #include "openslide-common.h"
+#include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 #include "nvjpegDecoder.h"
 #include <stdint.h>
 #include <stdio.h>
@@ -9,6 +12,7 @@
 #include <string>
 
 using namespace std;
+using namespace cv;
 
 class Openslide2jpeg {
     private:
@@ -73,6 +77,8 @@ void Openslide2jpeg::loadWholeSlide(int index){
     printf("Target level: %d, Target width: %ld, Target height: %ld", target_level, target_width, target_height);
     buf = reinterpret_cast<uint32_t*>(malloc((size_t)target_width * (size_t)target_height * (size_t)4));
     openslide_read_region(slide, buf, 0, 0, target_level, target_width, target_height);
+    Mat whole_slide_src = Mat(target_height, target_width, CV_8UC3, buf);
+    imwrite("test_1_wholeslide.jpg", whole_slide_src);
     free(buf);
 }
 
