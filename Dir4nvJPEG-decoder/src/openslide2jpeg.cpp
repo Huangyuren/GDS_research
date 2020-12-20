@@ -35,8 +35,8 @@ void Openslide2jpeg::searchPath(string basepath){
                 //Iterator through ./data/class_*/ directory
                 dir_inner = opendir((basepath + ent->d_name).c_str());
                 while((ent_inner = readdir(dir_inner)) != nullptr) {
-                    slide_files.push_back(string(basepath + string(ent->d_name) + "/" + string(ent_inner->d_name)));
                     if(string(ent_inner->d_name) != ".." && string(ent_inner->d_name) != "."){
+                        slide_files.push_back(string(basepath + string(ent->d_name) + "/" + string(ent_inner->d_name)));
                         printf ("%s\n", ent_inner->d_name);
                         slide_count += 1;
                     }
@@ -45,6 +45,7 @@ void Openslide2jpeg::searchPath(string basepath){
             }
         }
         closedir(dir);
+        slide_count -= 1;
         printf("ToTal .svs files found: %d\n", slide_count);
     }
     else {
@@ -59,16 +60,17 @@ void Openslide2jpeg::loadWholeSlide(int index){
     printf("Current processing file name: %s\n", slide_files[index].c_str());
     openslide_t* slide = openslide_open(slide_files[index].c_str());
     int level_cnt = openslide_get_level_count(slide);
-    // printf("Level count: %d\n", level_cnt);
+    printf("Total Level count: %d\n", level_cnt);
     for(int i=0; i<level_cnt; i++){
         int32_t tmp_level = openslide_get_level_downsample(slide, i);
+        // printf("Iter: %d, Temporary level: %d\n", i, tmp_level);
         if(tmp_level <= 1.0 / resize_ratio){
-            target_level = tmp_level;
+            target_level = i;
         }
     }
-    printf("Target level: %d\n", target_level);
+    // printf("Target level: %d\n", target_level);
     openslide_get_level_dimensions(slide, target_level, &target_width, &target_height);
-    printf("Target width: %ld, Target height: %ld", target_width, target_height);
+    printf("Target level: %d, Target width: %ld, Target height: %ld", target_level, target_width, target_height);
     buf = reinterpret_cast<uint32_t*>(malloc((size_t)target_width * (size_t)target_height * (size_t)4));
     openslide_read_region(slide, buf, 0, 0, target_level, target_width, target_height);
     free(buf);

@@ -24,4 +24,4 @@ cuda: $(SOURCE)
 .PHONY: clean
 
 clean:
-		rm -f $(BIN)*.o
+		rm -f $(BIN)$(FILE2COMPILE)
