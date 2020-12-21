@@ -12,7 +12,7 @@ CC=g++
 # Libraries and flags
 LDFLAGS=-L../lib64 -L/usr/local/cuda-11.0/lib64 -L/usr/local/lib
 INCLUDES=-I./include -I/usr/local/cuda-11.0/include -I../../openslide/src -I../../openslide/common -I/usr/local/include/opencv4
-LIBS=-ldl -lrt -lcudart -lnvjpeg -lopenslide -lopencv_core -lopencv_imgcodecs
+LIBS=-ldl -lrt -lcudart -lnvjpeg -lopenslide -lopencv_imgproc -lopencv_core -lopencv_imgcodecs
 RPATH=-Wl,-rpath=../lib64 -Wl,-rpath=/usr/local/cuda-11.0/lib64
 CXXFLAGS := -O2 -std=c++14 $(LDFLAGS) $(INCLUDES) $(LIBS) $(RPATH)
 
