@@ -1,9 +1,9 @@
 #include "openslide-features.h"
 #include "openslide.h"
 // #include "openslide-common.h"
-#include <opencv2/core.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc.hpp>
+#include "opencv2/core.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/imgproc.hpp"
 #include "nvjpegDecoder.h"
 #include <stdint.h>
 #include <stdio.h>
@@ -77,8 +77,10 @@ void Openslide2jpeg::loadWholeSlide(int index){
     printf("Target level: %d, Target width: %ld, Target height: %ld", target_level, target_width, target_height);
     buf = reinterpret_cast<uint32_t*>(malloc((size_t)target_width * (size_t)target_height * (size_t)4));
     openslide_read_region(slide, buf, 0, 0, target_level, target_width, target_height);
-    Mat whole_slide_src = Mat(target_height, target_width, CV_8UC3, buf);
-    imwrite("test_1_wholeslide.jpg", whole_slide_src);
+    Mat whole_slide_src = Mat(target_height, target_width, CV_8UC4, buf);
+    Mat whole_slide_rgb = Mat::zeros(target_height, target_width, CV_8UC3);
+    cvtColor(whole_slide_src, whole_slide_rgb, COLOR_BGRA2RGB);
+    imwrite("test_1_wholeslide.jpg", whole_slide_rgb);
     free(buf);
 }
 
