@@ -12,6 +12,7 @@
 #include <string>
 #include <cuda_runtime_api.h>
 #include <nvjpeg.h>
+#include <omp.h>
 
 #define CHECK_CUDA(call)                                                        \
     {                                                                           \
@@ -39,15 +40,16 @@ using namespace cv;
 
 class Openslide2jpeg {
     private:
-        int slide_count;
         float resize_ratio;
-        vector<pair<int64_t, int64_t>> target_dimension;
+        vector<tuple<int64_t, int64_t, int>> target_dimension;
         vector<Mat> whole_slide_rgb;
         vector<string> slide_files;
+        vector<openslide_t*> slide_obj;
     public:
+        int slide_count;
         void searchPath(string);
         void loadWholeSlide();
-        void trans2jpeg();
+        void trans2jpeg(int);
         void printMatrix(Mat);
 };
 
@@ -89,8 +91,7 @@ void Openslide2jpeg::searchPath(string basepath){
             }
         }
         closedir(dir);
-        slide_count -= 1;
-        printf("ToTal .svs files found: %d\n", slide_count);
+        printf("Total .svs files found: %d\n", slide_count);
     }
     else {
         // could not open directory
@@ -101,45 +102,63 @@ void Openslide2jpeg::searchPath(string basepath){
 void Openslide2jpeg::loadWholeSlide(){
     // printf("OpenCV version: %d.%d.%d\n", CV_MAJOR_VERSION, CV_MINOR_VERSION, CV_SUBMINOR_VERSION);
     resize_ratio = 0.2;
-    int32_t target_level;
-    int64_t target_width, target_height;
     int level_cnt;
-    for(int idx=0; idx < slide_files.size(); idx++) {
+    for(int idx=0; idx < slide_count; idx++){
+        int32_t target_level;
+        int64_t target_width, target_height;
         printf("%d. Current processing file name: %s\n", idx, slide_files[idx].c_str());
         openslide_t* slide = openslide_open(slide_files[idx].c_str());
         level_cnt = openslide_get_level_count(slide);
-        // printf("Total Level count: %d\n", level_cnt);
         for(int i=0; i<level_cnt; i++){
             int32_t tmp_level = openslide_get_level_downsample(slide, i);
-            // printf("Iter: %d, Temporary level: %d\n", i, tmp_level);
             if(tmp_level <= 1.0 / resize_ratio){
                 target_level = i;
             }
         }
         openslide_get_level_dimensions(slide, target_level, &target_width, &target_height);
-        target_dimension.push_back(make_pair(target_width, target_height));
+        target_dimension.push_back(make_tuple(target_width, target_height, target_level));
+        slide_obj.push_back(slide);
         printf("   Target level: %d, Target width: %ld, Target height: %ld\n", target_level, target_width, target_height);
-        
-        //Preparing buffer
-        uint32_t* buf = reinterpret_cast<uint32_t*>(malloc((size_t)target_width * (size_t)target_height * (size_t)4));
-        openslide_read_region(slide, buf, 0, 0, target_level, target_width, target_height);
-        //Converting buffer to OpenCV's matrix datatype
-        Mat whole_slide_src = Mat(target_height, target_width, CV_8UC4, buf);
-        Mat whole_slide_rgb_single = Mat::zeros(target_height, target_width, CV_8UC3);
-        cvtColor(whole_slide_src, whole_slide_rgb_single, COLOR_RGBA2RGB);
-        whole_slide_rgb.push_back(whole_slide_rgb_single);      
-        imwrite("test_"+to_string(idx)+"_wholeslide_rgba2rgb.jpg", whole_slide_rgb);
-        free(buf);
-        openslide_close(slide);
     }
+    
+    // uint32_t* buf;
+    #pragma omp parallel num_threads(3) shared(slide_obj, target_dimension)
+    {
+        vector<Mat> vec_private;
+        #pragma omp for nowait schedule(static)
+        for(int i=0; i<slide_count; i++){
+            int64_t target_width = get<0>(target_dimension[i]);
+            int64_t target_height = get<1>(target_dimension[i]);
+            int32_t target_level = get<2>(target_dimension[i]);
+            size_t esti_size = (size_t)target_width * (size_t)target_height * (size_t)4;
+            //Preparing buffer
+            vector<uint32_t> curr_buf(esti_size, 0);
+            // buf = reinterpret_cast<uint32_t*>(malloc((size_t)target_width * (size_t)target_height * (size_t)4));
+            openslide_read_region(slide_obj[i], curr_buf.data(), 0, 0, target_level, target_width, target_height);
+            //Converting buffer to OpenCV's matrix datatype
+            Mat whole_slide_src = Mat(target_height, target_width, CV_8UC4, curr_buf.data());
+            Mat whole_slide_rgb_single = Mat::zeros(target_height, target_width, CV_8UC3);
+            cvtColor(whole_slide_src, whole_slide_rgb_single, COLOR_RGBA2RGB);
+            vec_private.push_back(whole_slide_rgb_single);
+            // imwrite("test_1_wholeslide_rgba2rgb.jpg", whole_slide_rgb_single);
+        }
+        // printf("Check: vec_private size: %zu\n", vec_private.size());
+        // printf("OpenMP thread count: %d\n", omp_get_num_threads());
+
+        #pragma omp for schedule(static) ordered
+        for(int i=0; i < omp_get_num_threads(); i++){
+            #pragma omp ordered
+            whole_slide_rgb.insert(whole_slide_rgb.end(), vec_private.begin(), vec_private.end());
+        }
+    }
+    for(int j=0; j<slide_count; j++){
+        openslide_close(slide_obj[j]);
+    }
+
 }
 
-void Openslide2jpeg::trans2jpeg(){
+void Openslide2jpeg::trans2jpeg(int idx){
     nvjpegHandle_t nv_handle;
-    // nvjpegDevAllocator_t dev_allocator = {&dev_malloc, &dev_free};
-    // nvjpegPinnedAllocator_t pinned_allocator ={&host_malloc, &host_free};
-    // CHECK_NVJPEG(nvjpegCreateEx(NVJPEG_BACKEND_GPU_HYBRID, &dev_allocator,
-    //                             &pinned_allocator, NVJPEG_FLAGS_DEFAULT, &nv_handle));
     nvjpegEncoderState_t nv_enc_state;
     nvjpegEncoderParams_t nv_enc_params;
     cudaStream_t stream;
@@ -151,44 +170,41 @@ void Openslide2jpeg::trans2jpeg(){
     CHECK_NVJPEG(nvjpegEncoderParamsCreate(nv_handle, &nv_enc_params, stream));
     CHECK_NVJPEG(nvjpegEncoderParamsSetSamplingFactors(nv_enc_params, NVJPEG_CSS_444, stream));
     
-    int64_t target_width, target_height;
-    for(int idx=0; idx < whole_slide_rgb.size(); idx++){
-        printf("Iteration: %d\n", idx);
-        nvjpegImage_t nv_image;
-        target_width = target_dimension[idx].first;
-        target_height = target_dimension[idx].second;
-        // Fill nv_image with image data, let’s say target_height, target_width image in RGB format
-        Mat bgr[3];
-        split(whole_slide_rgb[idx], bgr);
-        printf("   Target width: %ld, Target height: %ld\n", target_width, target_height);
-        for(int i=0; i<3; i++){
-            CHECK_CUDA(cudaMalloc((void **)&(nv_image.channel[i]), target_width * target_height));
-            CHECK_CUDA(cudaMemcpy(nv_image.channel[i], bgr[2-i].data, target_width * target_height, cudaMemcpyHostToDevice));
-            nv_image.pitch[i] = (size_t)target_width;
-        }
-        // CHECK_CUDA(cudaMalloc((void **) &(nv_image.channel[0]), target_width * target_height * 3));
-        // CHECK_CUDA(cudaMemcpy(nv_image.channel[0], whole_slide_rgb[i].data, target_width * target_width * 3, cudaMemcpyHostToDevice));
-        // nv_image.pitch[0] = 3 * (size_t)target_width;
-         
-        // Compress image
-        CHECK_NVJPEG(nvjpegEncodeImage(nv_handle, nv_enc_state, nv_enc_params,
-            &nv_image, NVJPEG_INPUT_RGB, target_width, target_height, stream));
-         
-        // get compressed stream size
-        size_t length;
-        CHECK_NVJPEG(nvjpegEncodeRetrieveBitstream(nv_handle, nv_enc_state, NULL, &length, stream));
-        // printf("Encoder gen length: %zu\n", length);
-        // get stream itself
-        cudaStreamSynchronize(stream);
-        vector<unsigned char> jpeg(length);
-        CHECK_NVJPEG(nvjpegEncodeRetrieveBitstream(nv_handle, nv_enc_state, jpeg.data(), &length, 0));
-         
-        // write stream to file
-        const char* jpegstream = reinterpret_cast<const char*>(jpeg.data());
-        cudaStreamSynchronize(stream);
-        ofstream output_file("test"+to_string(idx)+".jpg", ios::out | ios::binary);
-        output_file.write(jpegstream, length);
-        output_file.close();
+    printf("Iteration: %d\n", idx);
+    nvjpegImage_t nv_image;
+    int64_t target_width = get<0>(target_dimension[idx]);
+    int64_t target_height = get<1>(target_dimension[idx]);
+    // Fill nv_image with image data, let’s say target_height, target_width image in RGB format
+    Mat bgr[3];
+    split(whole_slide_rgb[idx], bgr);
+    printf("   Whole slide RGB size: %zu, Target width: %ld, Target height: %ld\n", whole_slide_rgb.size(), target_width, target_height);
+    for(int i=0; i<3; i++){
+        CHECK_CUDA(cudaMalloc((void **)&(nv_image.channel[i]), target_width * target_height));
+        CHECK_CUDA(cudaMemcpy(nv_image.channel[i], bgr[2-i].data, target_width * target_height, cudaMemcpyHostToDevice));
+        nv_image.pitch[i] = (size_t)target_width;
+    }
+     
+    // Compress image
+    CHECK_NVJPEG(nvjpegEncodeImage(nv_handle, nv_enc_state, nv_enc_params,
+        &nv_image, NVJPEG_INPUT_RGB, target_width, target_height, stream));
+     
+    // get compressed stream size
+    size_t length;
+    CHECK_NVJPEG(nvjpegEncodeRetrieveBitstream(nv_handle, nv_enc_state, NULL, &length, stream));
+    // printf("Encoder gen length: %zu\n", length);
+    // get stream itself
+    cudaStreamSynchronize(stream);
+    vector<unsigned char> jpeg(length);
+    CHECK_NVJPEG(nvjpegEncodeRetrieveBitstream(nv_handle, nv_enc_state, jpeg.data(), &length, 0));
+     
+    // write stream to file
+    const char* jpegstream = reinterpret_cast<const char*>(jpeg.data());
+    cudaStreamSynchronize(stream);
+    ofstream output_file("test"+to_string(idx)+".jpg", ios::out | ios::binary);
+    output_file.write(jpegstream, length);
+    output_file.close();
+    for(int i=0; i<3; i++){
+        CHECK_CUDA(cudaFree(nv_image.channel[i]));
     }
     CHECK_NVJPEG(nvjpegDestroy(nv_handle));
 }
@@ -202,7 +218,15 @@ int main(int argc, char* argv[]){
     Openslide2jpeg slideObj;
     slideObj.searchPath(slide_path);
     slideObj.loadWholeSlide();
-    // slideObj.trans2jpeg();
+    
+    #pragma omp parallel
+    {
+        CHECK_CUDA(cudaSetDevice(0));
+        #pragma omp for
+        for(int i=0; i < slideObj.slide_count; i++){
+            slideObj.trans2jpeg(i);
+        }
+    }
 }
 /*def _load_img(self, index):
         #  print("Index: {}, Loading images...".format(index))
